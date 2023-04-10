@@ -19,7 +19,8 @@ The hero’s hometown is suffering from a plague of monsters. Welling up from th
 ## MVP
 1. Create a basic dungeon map
 2. Place the player and let them walk around
-3. Spawn monsters, draw them, and let the player kill them by walking into them. 4. Add health and a combat system that uses it.
+3. Spawn monsters, draw them, and let the player kill them by walking into them.
+4. Add health and a combat system that uses it.
 5. Add healing potions.
 6. Display a “game over” screen when the player dies.
 7. Add the Amulet of Yala to the level and let the player win by reaching it.
