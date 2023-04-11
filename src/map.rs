@@ -24,6 +24,23 @@ impl Map {
         }
     }
 
+    #[allow(clippy::unused_self)]
+    pub fn in_bounds(&self, point: Point) -> bool {
+        point.x >= 0 && point.x < SCREEN_WIDTH && point.y >= 0 && point.y < SCREEN_HEIGHT
+    }
+
+    pub fn can_enter_tile(&self, point: Point) -> bool {
+        self.in_bounds(point) && self.tiles[map_idx(point.x, point.y)] == TileType::Floor
+    }
+
+    pub fn try_idx(&self, point: Point) -> Option<usize> {
+        if self.in_bounds(point) {
+            Some(map_idx(point.x, point.y))
+        } else {
+            None
+        }
+    }
+
     #[allow(clippy::match_on_vec_items)]
     pub fn render(&self, ctx: &mut BTerm) {
         for y in 0..SCREEN_HEIGHT {
